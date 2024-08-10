@@ -58,7 +58,7 @@ const captureScreenshot = async (articleId: any) => {
 
       <button class="text-xl bg-[#263238] text-[#ffffff] dark:bg-[#1A3636] cursor-default p-3 rounded-3xl relative -top-4 rounded-t-none">{{ article.title }}</button>
 
-      <button class="text-xl text-[#263238] dark:text-[#ffffff] p-3 rounded-3xl relative -top-4 rounded-t-none cursor-pointer transform ease-in-out duration-500 " @click="captureScreenshot(article._id)"><Icon name="lucide:download"></Icon>
+      <button class="text-xl text-[#263238] dark:text-[#ffffff] p-3 rounded-3xl relative -top-4 rounded-t-none cursor-pointer hover:scale-110 transform ease-in-out duration-500 " @click="captureScreenshot(article._id)"><Icon name="lucide:download"></Icon>
       </button>
 
       </div>
