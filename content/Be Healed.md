@@ -11,7 +11,7 @@ tags: ['sick', 'hurt']
 
 <p class="noto-nastaliq text-[18px] py-2 leading-[4rem]">اے اللہ ! لوگوں کے رب ! تکلیف کو دور کر دینے والے ! شفاء عطا فرما ، تو ہی شفاء دینے والا ہے تیرے سوا کوئی شفاء دینے والا نہیں ، ایسی شفاء عطا فرما کہ بیماری بالکل باقی نہ رہے ۔</p>
 
-<div class="justify-between ltr:grid sm:flex my-6"><audio src="https://raw.githubusercontent.com/imrofayel/dua/master/audios/Divine%20Protection.mp3" controls></audio>
+<div class="justify-between ltr:grid sm:flex my-6"><audio src="https://raw.githubusercontent.com/imrofayel/Sujood/main/audios/Be%20Healed.mp3" controls></audio>
 
 <a href="https://sunnah.com/bukhari:5742"><p class="text-[18px] py-4 leading-loose underline underline-offset-[10px] decoration-wavy transform hover:scale-[1.03] duration-500 ease-in-out" style="direction:ltr;">Reference: Sahih al-Bukhari 5742</p></a>
 
