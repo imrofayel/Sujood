@@ -63,7 +63,7 @@ const captureScreenshot = async (articleId: any) => {
       </div>
       
       <!-- Content Renderer for article content -->
-      <ContentRenderer :value="article" class="grid justify-center px-4 py-2 sm:px-10" style="direction:rtl;" :id="`article-${article._id}`">
+      <ContentRenderer :value="article" class="grid justify-center px-4 py-2 sm:px-10" style="direction:rtl;" :id="`article-${article._id}`"">
         <template #empty>
           <p>No content found.</p>
         </template>
