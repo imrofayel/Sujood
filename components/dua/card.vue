@@ -51,12 +51,19 @@ const captureScreenshot = async (articleId: any) => {
     </select></div>
 
     <!-- Displaying filtered articles -->
-    <div v-for="article in filteredArticles" :key="article._path" class="dua-box m-4 sm:m-8 justify-center" :id="`article-${article._id}`">
+    <div v-for="article in filteredArticles" :key="article._path" class="dua-box m-4 sm:m-8 justify-center">
 
-      <button class="text-xl bg-[#263238] text-[#ffffff] dark:bg-[#1A3636] cursor-default p-3 rounded-3xl relative -top-4 rounded-t-none" @click="captureScreenshot(article._id)">{{ article.title }}</button>
+      
+      <div class="justify-between flex">
+
+      <button class="text-xl bg-[#263238] text-[#ffffff] dark:bg-[#1A3636] cursor-default p-3 rounded-3xl relative -top-4 rounded-t-none">{{ article.title }}</button>
+
+      <button class="text-xl bg-[#263238] text-[#ffffff] dark:bg-[#1A3636] p-3 rounded-3xl relative -top-4 rounded-t-none cursor-pointer" @click="captureScreenshot(article._id)"><Icon name="lucide:download"></Icon></button>
+
+      </div>
       
       <!-- Content Renderer for article content -->
-      <ContentRenderer :value="article" class="grid justify-center px-4 py-2 sm:px-10" style="direction:rtl;">
+      <ContentRenderer :value="article" class="grid justify-center px-4 py-2 sm:px-10" style="direction:rtl;" :id="`article-${article._id}`">
         <template #empty>
           <p>No content found.</p>
         </template>
