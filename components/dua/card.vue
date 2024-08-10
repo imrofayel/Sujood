@@ -1,5 +1,7 @@
 <script lang="ts" setup>
 
+import html2canvas from 'html2canvas';
+
 const { data: articles, error } = await useAsyncData('home', () => queryContent('/').sort({ _id: -1 }).find())
 
 // Redirect to 404 if there's an error
@@ -22,6 +24,21 @@ const tags = computed(() => {
   return [...new Set(allTags)]
 })
 
+const captureScreenshot = async (articleId: any) => {
+  const element = document.getElementById(`article-${articleId}`);
+  if (element) {
+    try {
+      const canvas = await html2canvas(element);
+      const image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+      const link = document.createElement('a');
+      link.download = `article-${articleId}.png`;
+      link.href = image;
+      link.click();
+    } catch (error) {
+      console.error('Error capturing screenshot:', error);
+    }
+  }
+}
 
 </script>
 
@@ -34,9 +51,9 @@ const tags = computed(() => {
     </select></div>
 
     <!-- Displaying filtered articles -->
-    <div v-for="article in filteredArticles" :key="article._path" class="dua-box m-4 sm:m-8 justify-center">
+    <div v-for="article in filteredArticles" :key="article._path" class="dua-box m-4 sm:m-8 justify-center" :id="`article-${article._id}`">
 
-      <button class="text-xl bg-[#263238] text-[#ffffff] dark:bg-[#1A3636] cursor-default p-3 rounded-3xl relative -top-4 rounded-t-none">{{ article.title }}</button>
+      <button class="text-xl bg-[#263238] text-[#ffffff] dark:bg-[#1A3636] cursor-default p-3 rounded-3xl relative -top-4 rounded-t-none" @click="captureScreenshot(article._id)">{{ article.title }}</button>
       
       <!-- Content Renderer for article content -->
       <ContentRenderer :value="article" class="grid justify-center px-4 py-2 sm:px-10" style="direction:rtl;">
