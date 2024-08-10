@@ -28,7 +28,7 @@
 
     <p class="relative right-[120px] space-x-6">
       
-      <span class="inline noto-nastaliq text-[28px]">القرآن الحکیم</span><Icon name="lucide:sprout" size="38"></Icon>
+      <span class="inline noto-nastaliq text-[28px]">أدعية</span><Icon name="lucide:sprout" size="38"></Icon>
 
     </p>
 
