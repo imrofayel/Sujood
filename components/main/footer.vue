@@ -8,9 +8,9 @@ function onClick(val: string) {
 </script>
 
 <template>
-  <div class="py-5 mt-5 text-[#263238] dark:text-zinc-300 text-[19px]">
+  <div class="grid sm:flex py-5 mt-5 text-[#263238] dark:text-zinc-300 text-[19px]">
     <div class="px-6 container max-w-5xl mx-auto">
-      <div class="mt-5 text-center p-2 space-x-4 font-Inter" style="direction: ltr"><div class="inline">© 2024 Adam Rofayel.</div>
+      <div class="p-2 space-x-4 font-Inter" style="direction: ltr"><div class="inline">© 2024 Adam Rofayel.</div>
 
       <a v-if="colorMode.value === 'light'" class="inline space-x-2"
         @click="onClick('dark')" style="cursor: pointer;"><svg width="26px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline">
@@ -25,6 +25,9 @@ function onClick(val: string) {
         </svg><p class="inline">Light</p></a>
 
     </div></div>
+
+    <NuxtLink to="about" class="px-8 py-2 pb-8 sm:py-0 sm:pb-0 transform hover:scale-110 duration-500 ease-in-out cursor-pointer"><Icon name="lucide:arrow-up-right" size="24px" class="relative top-1.5"></Icon><div class="p-1 inline"></div>About me</NuxtLink>
+
   </div>
 </template>
 
